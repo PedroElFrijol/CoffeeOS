@@ -168,9 +168,5 @@ void kernel_main(uint32_t r0, uint32_t r1, uint32_t atags)
 {
     uart_init(2);
     uart_puts("Welcome to PedroOS!\n\r");
-	
-    for(;;){
-	asm("hlt");
-    }
 
 }
