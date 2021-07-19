@@ -6,10 +6,12 @@ https://wiki.osdev.org/Raspberry_Pi_Bare_Bones
 
 ## How to build the OS
 
-Build the Bootloader: `arm-none-eabi-gcc -mcpu=cortex-a7 -fpic -ffreestanding -c bootloader/bootsector.S -o bootsector.o`
+Build the Bootloader: `make bootloader`
 
-Linking the Kernel: `arm-none-eabi-gcc -mcpu=arm1176jzf-s -fpic -ffreestanding -std=gnu99 -c kernel/kernel.c -o kernel.o -O2 -Wall -Wextra`
+Build the Kernel: `make kernel`
 
-Converts the Object file to ELF file: `arm-none-eabi-gcc -T linker.ld -o kernel.elf -ffreestanding -O2 -nostdlib bootsector.o kernel.o -lgcc`
+Run QEMU IN ARM: `make run`
 
-Run QEMU IN ARM: `qemu-system-arm -m 256 -M raspi2 -kernel kernel.elf`
+Clean the project: `make clean`
+
+Build All: `make all`
