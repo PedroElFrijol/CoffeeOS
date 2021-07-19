@@ -6,12 +6,12 @@ https://wiki.osdev.org/Raspberry_Pi_Bare_Bones
 
 ## How to build the OS
 
-Build the Bootloader: `make bootloader`
+Build the Bootloader:    `make bootloader`
 
-Build the Kernel: `make kernel`
+Build the Kernel:        `make kernel`
 
-Run QEMU IN ARM: `make run`
+Run QEMU IN ARM:         `make run`
 
-Clean the project: `make clean`
+Clean the project:       `make clean`
 
-Build All: `make all`
+Build All:               `make all`
