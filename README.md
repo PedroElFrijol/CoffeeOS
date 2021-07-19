@@ -12,4 +12,4 @@ Linking the Kernel: `arm-none-eabi-gcc -mcpu=arm1176jzf-s -fpic -ffreestanding -
 
 Converts the Object file to ELF file: `arm-none-eabi-gcc -T linker.ld -o kernel.elf -ffreestanding -O2 -nostdlib bootsector.o kernel.o -lgcc`
 
-Run QEMU IN ARM: `qemu-system-arm -m 256 -M raspi2 -serial stdio -kernel kernel.elf`
+Run QEMU IN ARM: `qemu-system-arm -m 256 -M raspi2 -kernel kernel.elf`
