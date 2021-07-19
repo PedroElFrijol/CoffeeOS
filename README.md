@@ -15,3 +15,5 @@ Run QEMU IN ARM:         `make run`
 Clean the project:       `make clean`
 
 Build All:               `make all`
+
+(make commands made by Pradosh/ pradosh-arduino)
