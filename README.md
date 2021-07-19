@@ -16,4 +16,4 @@ Clean the project:       `make clean`
 
 Build All:               `make all`
 
-(make commands made by Pradosh/ pradosh-arduino)
+(make commands made by Pradosh / pradosh-arduino)
