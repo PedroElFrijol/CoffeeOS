@@ -167,20 +167,6 @@ void kernel_main(uint32_t r0, uint32_t r1, uint32_t atags)
 #endif
 {
     uart_init(2);
+    uart_puts("Welcome to PedroOS!");
 
-    if(KernelMain(r0, r1, atags) == 0){
-    uart_puts("Kernel loaded sucessfully!");
-    }else
-    {
-    uart_puts("An error as been occured while loading the kernel");
-    }
-
-}
-
-int KernelMain(uint32_t r0, uint32_t r1, uint32_t atags){ 
-
-    // initialize UART for Raspi2
-	uart_puts("Hello Pedro...\r\n");
-
-    return 0;
 }
