@@ -1,5 +1,5 @@
-#include <stddef.h>
-#include <stdint.h>
+#include <stddef.h> // https://www.tutorialspoint.com/c_standard_library/stddef_h.htm
+#include <stdint.h> // https://pubs.opengroup.org/onlinepubs/009604599/basedefs/stdint.h.html
  
 static uint32_t MMIO_BASE;
  
