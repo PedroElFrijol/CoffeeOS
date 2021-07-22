@@ -4,7 +4,7 @@
 #------------------------------------------------------
 .PHONY: all clean bootloader kernel run
 
-all: bootloader kernel
+all: bootloader kernel clean
 
 clean:
 	rm *.o
