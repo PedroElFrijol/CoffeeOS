@@ -1,6 +1,6 @@
 #------------------------------------------------------
 # this make file is made by Pradosh.S / pradosh-arduino
-# edited by PedroElFrijol
+# modified by PedroElFrijol
 #------------------------------------------------------
 .PHONY: all clean bootloader kernel run
 
@@ -20,6 +20,7 @@ kernel:
 	@echo
 	@echo Linking...
 	@arm-none-eabi-gcc -T linker.ld -o kernel.elf -ffreestanding -O2 -nostdlib bootsector.o kernel.o -lgcc
+	@arm-none-eabi-objcopy kernel.elf -O binary kernel6.img
 
 run:
-	@qemu-system-arm -m 256 -M raspi2 -kernel kernel.elf
+	@qemu-system-arm -m 256 -M raspi2 -serial stdio -kernel kernel.elf
