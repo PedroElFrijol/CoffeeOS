@@ -7,8 +7,6 @@ https://wiki.osdev.org/Raspberry_Pi_Bare_Bones
 ## Bugs and Fixes
 Fixed the makefile and make commands so it can print to the console
 
-Added .elf to the "clean" section of the makefile
-
 Removed clean from the "all" section of the makefile
 
 (Bugs and fixes updated by PedroElFrijol)
