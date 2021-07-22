@@ -15,10 +15,10 @@ bootloader:
 	@echo 
 
 kernel:
-	@echo Compiling
+	@echo Compiling the kernel...
 	@arm-none-eabi-gcc -mcpu=arm1176jzf-s -fpic -ffreestanding -std=gnu99 -c kernel/kernel.c -o kernel.o -O2 -Wall -Wextra
 	@echo
-	@echo Linking...
+	@echo Linking the kernel...
 	@arm-none-eabi-gcc -T linker.ld -o kernel.elf -ffreestanding -O2 -nostdlib bootsector.o kernel.o -lgcc
 	@arm-none-eabi-objcopy kernel.elf -O binary kernel6.img
 
