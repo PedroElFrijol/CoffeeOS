@@ -1,25 +1,19 @@
-#------------------------------------------------------
-# this make file is made by Pradosh.S / pradosh-arduino
-# edited by PedroElFrijol
-#------------------------------------------------------
-.PHONY: all clean bootloader kernel run
+CFILES = $(wildcard *.c)
+OFILES = $(CFILES:.c=.o)
+LLVMPATH = /opt/homebrew/opt/llvm/bin
+CLANGFLAGS = -Wall -O2 -ffreestanding -nostdinc -nostdlib -mcpu=cortex-a72+nosimd
 
-all: bootloader kernel clean
+all: clean kernel8.img
+
+boot.o: boot.S
+	$(LLVMPATH)/clang --target=aarch64-elf $(CLANGFLAGS) -c boot.S -o boot.o
+
+%.o: %.c
+	$(LLVMPATH)/clang --target=aarch64-elf $(CLANGFLAGS) -c $< -o $@
+
+kernel8.img: boot.o $(OFILES)
+	$(LLVMPATH)/ld.lld -m aarch64elf -nostdlib boot.o $(OFILES) -T link.ld -o kernel8.elf
+	$(LLVMPATH)/llvm-objcopy -O binary kernel8.elf kernel8.img
 
 clean:
-	rm *.o
-	
-bootloader:
-	@echo Building Bootloader for ARM...
-	@arm-none-eabi-gcc -mcpu=cortex-a7 -fpic -ffreestanding -c bootloader/bootsector.S -o bootsector.o
-	@echo 
-
-kernel:
-	@echo Compiling
-	@arm-none-eabi-gcc -mcpu=arm1176jzf-s -fpic -ffreestanding -std=gnu99 -c kernel/kernel.c -o kernel.o -O2 -Wall -Wextra
-	@echo
-	@echo Linking...
-	@arm-none-eabi-gcc -T linker.ld -o kernel.elf -ffreestanding -O2 -nostdlib bootsector.o kernel.o -lgcc
-
-run:
-	@qemu-system-arm -m 256 -M raspi2 -kernel kernel.elf
+	/bin/rm kernel8.elf *.o *.img > /dev/null 2> /dev/null || true
