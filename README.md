@@ -10,7 +10,7 @@ Fixed the makefile and make commands so it can print to the console
 (Bugs and fixes updated by PedroElFrijol)
 
 ## How to build the OS
-you need ARM build tools to install that you can use: `sudo apt install gcc-arm-none-eabi`
+You need AArch64 build tools to install that you can use: `sudo apt install gcc-aarch64-linux-gnu`
 
 Build the Bootloader:    `make bootloader`
 
