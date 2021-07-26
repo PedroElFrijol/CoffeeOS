@@ -9,17 +9,11 @@ Fixed the makefile and make commands so it can print to the console
 
 (Bugs and fixes updated by PedroElFrijol)
 
+
+##Requirments
+You need AArch64 build tools to install that you can use: `sudo apt install gcc-aarch64-linux-gnu`
+
+Homebrew is required for building
+
 ## How to build the OS
-you need ARM build tools to install that you can use: `sudo apt install gcc-arm-none-eabi`
 
-Build the Bootloader:    `make bootloader`
-
-Build the Kernel:        `make kernel`
-
-Run QEMU IN ARM:         `make run`
-
-Clean the project:       `make clean`
-
-Build All:               `make all`
-
-(make commands made by Pradosh / pradosh-arduino)
