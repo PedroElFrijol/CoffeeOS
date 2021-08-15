@@ -1,6 +1,6 @@
-#include "io.h"
-#include "mb.h"
-#include "terminal.h"
+#include "../io.h" //input output
+#include "mb.h" //mailbox
+#include "../terminal.h"
 
 unsigned int width, height, pitch, isrgb;
 unsigned char *fb;

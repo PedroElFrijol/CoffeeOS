@@ -1,3 +1,5 @@
+//terminal.h defines some basic constants: a palette, a font, and some font metadata
+
 unsigned int vgapal[] = {
     0x000000,
     0x0000AA,

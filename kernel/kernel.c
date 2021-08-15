@@ -1,5 +1,5 @@
-#include "io.h"
-#include "fb.h"
+#include "../io.h"
+#include "../framebuffer/fb.h"
 
 void main()
 {
