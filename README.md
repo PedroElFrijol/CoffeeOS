@@ -1,25 +1,10 @@
 # CoffeeOS
 
-CoffeeOS is an ARM based operating system that can be booted in Raspberry PI 0, Raspberry PI 0W, and Raspberry PI 4
+CoffeeOS is an ARM based operating system that can be booted on a Raspberry pi 4
 
-https://wiki.osdev.org/Raspberry_Pi_Bare_Bones
-
-## Bugs and Fixes
-Fixed the makefile and make commands so it can print to the console
-
-(Bugs and fixes updated by PedroElFrijol)
+Following and modifying this: https://github.com/isometimes/rpi4-osdev
 
 ## How to build the OS
-you need ARM build tools to install that you can use: `sudo apt install gcc-arm-none-eabi`
+You need llvm for this: `brew install llvm` (if you are on wsl/linux then you need to install linuxbrew, if you are on mac you need to install homebrew and install llvm)
 
-Build the Bootloader:    `make bootloader`
-
-Build the Kernel:        `make kernel`
-
-Run QEMU IN ARM:         `make run`
-
-Clean the project:       `make clean`
-
-Build All:               `make all`
-
-(make commands made by Pradosh / pradosh-arduino)
+Build the OS: `make`
